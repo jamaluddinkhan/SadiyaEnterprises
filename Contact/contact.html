@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sadiya Enterprises</title>
+    <link rel="stylesheet" href="contact.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="icon" href="../Assets/Logo/mobFinalLogoBg.png" type="image/png">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar-container">
+        <div class="header-top">
+          <div class="logo-container">
+            <a href="../Home/index.html">
+              <img src="../Assets/Logo/try.png" alt="Sadiya Enterprises Logo" class="logo-img" />
+            </a>
+          </div>
+          <div class="header-text">
+            <h1>Building India's Future</h1>
+        <p class="tagline">Civil & Interior Specialists</p>
+            <!-- <p class="legal">GST: 27AQEPA5741Q1ZJ | PAN: AQEPA5741Q1ZJ</p> -->
+          </div>
+        </div>
+        
+        <nav class="navbar">
+          <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+          <label for="nav-toggle" class="hamburger">&#9776;</label>
+          <div class="nav-links">
+            <a href="../Home/index.html">Home</a>
+            <a href="../About/about.html">About ▼</a>
+            <a href="../Services/service.html">Services ▼</a>
+            <a href="../Clients/client.html">Clients</a>
+            <a href="../Contact/contact.html">Contact Us ▼</a>
+          </div>
+        </nav>
+      </header>
+      
+    <!-- contact hero -->
+    <section class="contact-hero">
+        <div class="hero-content">
+            <h1>Trust & Support</h1>
+            <p>Your vision, our commitment—get in touch today</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm"  action="https://formspree.io/f/mzzrzkja"
+                method="POST">
+                    <div class="form-group">
+                        <input type="text" id="name" required>
+                        <label for="name">Your Name</label>
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Email Address</label>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone">
+                        <label for="phone">Phone Number</label>
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="form-group">
+                        <select id="service" required>
+                            <option value="" disabled selected></option>
+                            <option>Interior Design</option>
+                            <option>Project Management</option>
+                            <option>Modular Furniture</option>
+                            <option>Carpentry Work</option>
+                            <option>Plumbing Work</option>
+                            <option>Electrical Work</option>
+                            <option>Modular Kitchen</option>
+                            <option>Painting Work</option>
+                        </select>
+                        <label for="service">Service Needed</label>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="4" required></textarea>
+                        <label for="message">Your Message</label>
+                        <i class="fas fa-comment"></i>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        Send Message <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Our Office</h3>
+                    <p>Ground Floor, No 14,<br> Building No 13,<br>Netwar Parikh Compound<br> GM Link Road Ghatkoper East, <br>
+                        Mumbai 400043</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>WhatsApp & Call Us</h3>
+                
+                    <p><a href="tel:+919892006986">+91 9892006986</a></p>
+                    
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                 
+                    <p><a href="mailto:sadiyaent@gmail.com">sadiyaent@gmail.com</a></p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Working Hours</h3>
+                    <p>Monday - Saturday: <br>9AM - 6PM<br>Sunday: Closed</p>
+                </div>
+            </div>
+        </div>
+        <a href="https://wa.me/+919892006986" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="mailto:sadiyaent@gmail.com" class="email-float">
+            <i class="fas fa-envelope"></i>
+          </a>
+    </section>
+
+    
+    
+
+    <!-- Map Section -->
+    <!-- <div class="map-container">
+        <iframe src=" paste google map link here" 
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div> -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <h2>Turning Vision Into Reality</h2>
+      <p>Your trusted partner in interior design and civil construction.</p>
+  
+      <div class="social-icons">
+        <a href="https://wa.me/919892006986" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:sadiyaent@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+  
+      <div class="footer-details">
+        <!-- Contact Info on the left -->
+        <div class="footer-contact">
+          <p><strong>Contact Us:</strong></p>
+          <p><i class="fas fa-phone-alt"></i> +91 9892006986</p>
+          <p><i class="fas fa-envelope"></i> sadiyaent@gmail.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Ground Floor, No 14, Building No 13,<br> Netwar Parikh Compound GM Link Road<br> Ghatkoper East, Mumbai, 400043</p>
+        </div>
+  
+        <!-- Quick Links in the middle -->
+        <div class="quick-links">
+          <p><strong>Quick Links</strong></p>
+          <ul>
+            <li><a href="../About/about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="../Services/service.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+            <li><a href="../Clients/client.html"><i class="fas fa-chevron-right"></i> Clients</a></li>
+            <li><a href="../Contact/contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+  
+        <!-- Services on the right -->
+        <div class="footer-services">
+          <p><strong>Our Services</strong></p>
+          <ul>
+            <li><a href="../Services/service.html#interior"><i class="fas fa-chevron-right"></i> Interior Design</a></li>
+            <li><a href="../Services/service.html#construction"><i class="fas fa-chevron-right"></i> Civil Construction</a></li>
+            <li><a href="../Services/service.html#renovation"><i class="fas fa-chevron-right"></i> Renovation</a></li>
+            <li><a href="../Services/service.html#consultancy"><i class="fas fa-chevron-right"></i> Design Consultancy</a></li>
+          </ul>
+        </div>
+      </div>
+  
+      <p class="copyright">2025 &copy; <span id="year"></span> Sadiya Enterprises. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle labels for all form fields
+            document.querySelectorAll('.form-group input, .form-group textarea, .form-group select').forEach(element => {
+                // Check if field has content on page load
+                if (element.value) {
+                    element.nextElementSibling.classList.add('active');
+                }
+                
+                // Add event listeners
+                element.addEventListener('focus', function() {
+                    this.nextElementSibling.classList.add('active');
+                });
+                
+                element.addEventListener('blur', function() {
+                    if (!this.value) {
+                        this.nextElementSibling.classList.remove('active');
+                    }
+                });
+            });
+            
+            // Special handling for select dropdown
+            document.querySelectorAll('.form-group select').forEach(select => {
+                select.addEventListener('change', function() {
+                    if (this.value) {
+                        this.nextElementSibling.classList.add('active');
+                    } else {
+                        this.nextElementSibling.classList.remove('active');
+                    }
+                });
+            });
+        });
+        </script>
+</body>
+
+</html>
