@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const content = document.querySelector('.hero-content');
   const videos = [
     {
-      src: '../Assets/Home/vid.mp4',
-      poster: '../Assets/Home/poster1.jpg',
+      src: './Assets/HOME/vid.mp4',
+      poster: './Assets/HOME/1.jpg',
       animation: 'zoom',
       text: {
         h1: "Creative Spaces Construction",
@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
       description: "We design and build innovative spaces that inspire creativity and productivity. From concept to completion, we bring architectural visions to life with precision and artistry."
     },
     {
-      src: '../Assets/Home/vid2.mp4',
-      poster: '../Assets/Home/poster2.jpg',
+      src: './Assets/HOME/vid2.mp4',
+      poster: './Assets/HOME/2.jpg',
       animation: 'pan',
       text: {
         h1: "Precision Building",
@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
       description: "With 15+ years of expertise, we deliver exceptional craftsmanship through meticulous attention to detail and uncompromising quality standards in every project."
     },
     {
-      src: '../Assets/Home/vid3.mp4',
-      poster: '../Assets/Home/poster3.jpg',
+      src: './Assets/HOME/vid3.mp4',
+      poster: './Assets/HOME/3.jpg',
       animation: 'zoom',
       text: {
         h1: "Innovative Design",
