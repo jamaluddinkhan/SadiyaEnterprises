@@ -30,7 +30,7 @@
   }
   
   .logo-img {
-    height: 60px;
+    height: 90px;
     width: auto;
     object-fit: contain;
   }
@@ -93,7 +93,7 @@
   .hamburger {
     display: none;
     font-size: 1.8rem;
-    color: #fff;
+    color: #f2aa4c;
     cursor: pointer;
     position: absolute;
     right: 20px;
@@ -154,7 +154,7 @@
     }
     
     .nav-links {
-      top: 140px;
+      top: 180px;
       height: calc(100vh - 140px);
     }
   }

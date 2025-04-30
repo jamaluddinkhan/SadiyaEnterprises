@@ -3,53 +3,27 @@ document.addEventListener('DOMContentLoaded', function () {
   const content = document.querySelector('.hero-content');
   const videos = [
     {
-      src: './Assets/HOME/vid.mp4',
-      poster: './Assets/HOME/1.jpg',
+      src: './Assets/HOME/vid3.mp4',
       animation: 'zoom',
       text: {
         h1: "Creative Spaces Construction",
         p: "Transforming Visions into Built Reality"
       },
-      description: "We design and build innovative spaces that inspire creativity and productivity. From concept to completion, we bring architectural visions to life with precision and artistry."
+      description: "We design and build innovative spaces that inspire creativity and productivity."
     },
     {
       src: './Assets/HOME/vid2.mp4',
-      poster: './Assets/HOME/2.jpg',
-      animation: 'pan',
+      animation: 'zoom',
       text: {
         h1: "Precision Building",
         p: "Quality Construction Solutions"
       },
-      description: "With 15+ years of expertise, we deliver exceptional craftsmanship through meticulous attention to detail and uncompromising quality standards in every project."
+      description: "We deliver exceptional craftsmanship with meticulous attention to detail."
     },
-    {
-      src: './Assets/HOME/vid3.mp4',
-      poster: './Assets/HOME/3.jpg',
-      animation: 'zoom',
-      text: {
-        h1: "Innovative Design",
-        p: "Redefining Modern Construction"
-      },
-      description: "We combine cutting-edge technology with sustainable practices to create functional, beautiful spaces that stand the test of time."
-    }
   ];
-
-  // Then modify your updateContent() function to include the description:
-  function updateContent() {
-    heroContent.classList.add('fade-out');
-    setTimeout(() => {
-      heroContent.querySelector('h1').textContent = videos[current].text.h1;
-      heroContent.querySelector('p').textContent = videos[current].text.p;
-      heroContent.querySelector('.description').textContent = videos[current].description; // Add this line
-      heroContent.classList.remove('fade-out');
-      heroContent.classList.add('fade-in');
-      setTimeout(() => heroContent.classList.remove('fade-in'), 500);
-    }, 500);
-  }
 
   let currentIndex = 0;
   let videoElements = [];
-  let interval;
 
   // Initialize slider
   function initSlider() {
@@ -57,11 +31,10 @@ document.addEventListener('DOMContentLoaded', function () {
     videos.forEach((video, index) => {
       const videoEl = document.createElement('video');
       videoEl.src = video.src;
-      videoEl.poster = video.poster;
       videoEl.className = 'hero-slide-video';
-      videoEl.loop = true;
+      videoEl.loop = false; // Disable looping
       videoEl.muted = true;
-      videoEl.autoplay = true;
+      videoEl.autoplay = index === 0; // Autoplay only first video
       videoEl.playsInline = true;
 
       if (index === 0) videoEl.classList.add('active', video.animation);
@@ -69,6 +42,9 @@ document.addEventListener('DOMContentLoaded', function () {
       slider.insertBefore(videoEl, content);
       videoElements.push(videoEl);
     });
+
+    // Add ended event listener to first video
+    videoElements[0].addEventListener('ended', nextSlide);
 
     // Create navigation buttons
     const prevBtn = document.createElement('button');
@@ -85,23 +61,24 @@ document.addEventListener('DOMContentLoaded', function () {
     slider.appendChild(nextBtn);
 
     updateContent();
-    startAutoPlay();
   }
 
   // Update slide content
   function updateContent() {
     content.classList.add('fade-out');
-
     setTimeout(() => {
       content.querySelector('h1').textContent = videos[currentIndex].text.h1;
       content.querySelector('p').textContent = videos[currentIndex].text.p;
+     
       content.classList.remove('fade-out');
       content.classList.add('fade-in');
-
-      setTimeout(() => {
-        content.classList.remove('fade-in');
-      }, 500);
+      setTimeout(() => content.classList.remove('fade-in'), 500);
     }, 500);
+  }
+
+  // Handle video end
+  function handleVideoEnd() {
+    nextSlide();
   }
 
   // Change slide
@@ -109,34 +86,29 @@ document.addEventListener('DOMContentLoaded', function () {
     if (newIndex < 0) newIndex = videos.length - 1;
     if (newIndex >= videos.length) newIndex = 0;
 
-    videoElements[currentIndex].classList.remove('active');
-    videoElements[currentIndex].pause();
+    // Remove active class and ended listener from current video
+    const currentVideo = videoElements[currentIndex];
+    currentVideo.classList.remove('active');
+    currentVideo.pause();
+    currentVideo.removeEventListener('ended', handleVideoEnd);
 
     currentIndex = newIndex;
 
-    videoElements[currentIndex].classList.add('active');
-    videoElements[currentIndex].play();
+    // Add active class and start new video
+    const newVideo = videoElements[currentIndex];
+    newVideo.classList.add('active');
+    newVideo.play();
+    newVideo.addEventListener('ended', handleVideoEnd);
+    
     updateContent();
   }
 
   function nextSlide() {
     changeSlide(currentIndex + 1);
-    resetInterval();
   }
 
   function prevSlide() {
     changeSlide(currentIndex - 1);
-    resetInterval();
-  }
-
-  // Auto-play functionality
-  function startAutoPlay() {
-    interval = setInterval(nextSlide, 5000);
-  }
-
-  function resetInterval() {
-    clearInterval(interval);
-    startAutoPlay();
   }
 
   // Touch and keyboard controls
@@ -148,7 +120,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function handleTouchStart(e) {
     touchStartX = e.touches[0].clientX;
-    clearInterval(interval);
   }
 
   function handleTouchEnd(e) {
@@ -157,8 +128,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (diff > 50) nextSlide();
     if (diff < -50) prevSlide();
-
-    resetInterval();
   }
 
   function handleKeyDown(e) {
