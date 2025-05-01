@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const slider = document.querySelector('.hero-slider');
   const content = document.querySelector('.hero-content');
+  
   const videos = [
     {
       src: './Assets/HOME/vid3.mp4',

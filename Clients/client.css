@@ -161,7 +161,6 @@
   
 
 
-
 /* Clients Hero */
 .clients-hero {
   position: relative;
@@ -300,13 +299,7 @@
 .preview-logos img {
   height: 60px;
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.8;
-  transition: all 0.3s ease;
-}
-
-.sector-box:hover .preview-logos img {
-  filter: grayscale(0%);
+  filter: none;
   opacity: 1;
 }
 
@@ -315,27 +308,21 @@
   .sector-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .clients-hero {
     height: 40vh;
   }
-  
+
   .clients-hero .hero-content h1 {
     font-size: 2.2rem;
   }
-  
+
   .clients-hero .hero-content p {
     font-size: 1.1rem;
   }
 }
 
-
-
-
-
-
 /* Footer */
-/* Footer Styling */
 .footer {
   background: #111;
   color: #eee;
